@@ -1,11 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import EnquiryModal from "@/components/EnquiryModal";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const scrollRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    let animationFrameId;
+    const scroll = () => {
+      if (scrollRef.current && !isHovered) {
+        scrollRef.current.scrollLeft += 1;
+        if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
+          scrollRef.current.scrollLeft -= scrollRef.current.scrollWidth / 2;
+        }
+      }
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+
+    animationFrameId = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isHovered]);
+
+  const testimonialsList = [
+    { name: "Rahul S.", text: "Vishwa Priya Developers made my dream of owning a plot a reality. The process was seamless and transparent.", role: "Homeowner" },
+    { name: "Priya M.", text: "Exceptional quality and timely delivery. I highly recommend them for anyone looking for premium real estate.", role: "Investor" },
+    { name: "Amit V.", text: "The team is very professional and helpful. They guided me through every step of the investment.", role: "Business Owner" },
+    { name: "Sneha K.", text: "A trustworthy name in real estate. Their projects are strategically located and offer great amenities.", role: "Resident" },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -145,19 +170,21 @@ export default function Home() {
           <h2 className="font-serif section-h2 font-bold text-dark mt-2">What Our Clients Say</h2>
         </div>
         
-        <div className="relative flex overflow-x-hidden group">
-          <div className="flex animate-marquee py-4 hover:[animation-play-state:paused]">
+        <div 
+          className="relative flex overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] cursor-grab active:cursor-grabbing"
+          ref={scrollRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
+        >
+          <div className="flex py-4">
             {/* First set of testimonials */}
-            {[
-              { name: "Rahul S.", text: "Vishwa Priya Developers made my dream of owning a plot a reality. The process was seamless and transparent.", role: "Homeowner" },
-              { name: "Priya M.", text: "Exceptional quality and timely delivery. I highly recommend them for anyone looking for premium real estate.", role: "Investor" },
-              { name: "Amit V.", text: "The team is very professional and helpful. They guided me through every step of the investment.", role: "Business Owner" },
-              { name: "Sneha K.", text: "A trustworthy name in real estate. Their projects are strategically located and offer great amenities.", role: "Resident" },
-            ].map((testimonial, i) => (
+            {testimonialsList.map((testimonial, i) => (
               <div key={i} className="mx-4 w-80 sm:w-96 flex-shrink-0 bg-surface-1 rounded-xl p-8 shadow-soft border border-border whitespace-normal hover:shadow-md hover:border-primary transition-all duration-200">
                 <div className="flex text-warning mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  {[...Array(5)].map((_, idx) => (
+                    <svg key={idx} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                   ))}
                 </div>
                 <p className="text-text-secondary mb-6 body-text">&quot;{testimonial.text}&quot;</p>
@@ -169,16 +196,11 @@ export default function Home() {
             ))}
             
             {/* Duplicate set for infinite scroll */}
-            {[
-              { name: "Rahul S.", text: "Vishwa Priya Developers made my dream of owning a plot a reality. The process was seamless and transparent.", role: "Homeowner" },
-              { name: "Priya M.", text: "Exceptional quality and timely delivery. I highly recommend them for anyone looking for premium real estate.", role: "Investor" },
-              { name: "Amit V.", text: "The team is very professional and helpful. They guided me through every step of the investment.", role: "Business Owner" },
-              { name: "Sneha K.", text: "A trustworthy name in real estate. Their projects are strategically located and offer great amenities.", role: "Resident" },
-            ].map((testimonial, i) => (
+            {testimonialsList.map((testimonial, i) => (
               <div key={i + 4} className="mx-4 w-80 sm:w-96 flex-shrink-0 bg-surface-1 rounded-xl p-8 shadow-soft border border-border whitespace-normal hover:shadow-md hover:border-primary transition-all duration-200">
                 <div className="flex text-warning mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  {[...Array(5)].map((_, idx) => (
+                    <svg key={idx} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                   ))}
                 </div>
                 <p className="text-text-secondary mb-6 body-text">&quot;{testimonial.text}&quot;</p>

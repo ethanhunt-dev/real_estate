@@ -231,9 +231,9 @@ export default function AboutUs() {
             Join our community of discerning homeowners and land investors. Let's build your legacy together.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="px-[28px] py-[14px] bg-primary text-white font-semibold rounded-md hover:bg-[#5A2EE0] transition-all duration-150 shadow-soft hover:shadow-md hover:-translate-y-[2px] focus:outline-none focus:ring-[3px] focus:ring-primary/20">
+            <Link href="/contact-us" className="px-[28px] py-[14px] bg-primary text-white font-semibold rounded-md hover:bg-[#5A2EE0] transition-all duration-150 shadow-soft hover:shadow-md hover:-translate-y-[2px] focus:outline-none focus:ring-[3px] focus:ring-primary/20 text-center inline-block">
               Contact Us
-            </button>
+            </Link>
           </div>
         </div>
       </section>

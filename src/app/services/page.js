@@ -4,7 +4,7 @@ export default function Services() {
   return (
     <div className="flex flex-col min-h-screen bg-surface-base">
       {/* Header Section */}
-      <section className="pt-24 pb-16 px-4 max-w-4xl mx-auto text-center relative">
+      <section className="pt-24 pb-16 px-4 max-w-4xl mx-auto text-center relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-white opacity-50 blur-3xl rounded-full pointer-events-none"></div>
         <div className="relative z-10">
           <span className="text-xs font-bold tracking-wider text-primary uppercase">Luxury Living Solutions</span>
@@ -20,7 +20,7 @@ export default function Services() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Strategic Plotting */}
           <div className="bg-surface-1 rounded-xl overflow-hidden shadow-soft hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-border group">
-            <div className="h-64 relative bg-[url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80')] bg-cover bg-center">
+            <div className="h-64 relative bg-[url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80')] bg-cover bg-center">
               <div className="absolute bottom-4 left-4 w-10 h-10 bg-black/40 backdrop-blur-md rounded-lg flex items-center justify-center text-white">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
               </div>
@@ -91,9 +91,9 @@ export default function Services() {
                   Contact our specialist consultants to discuss your requirements and find the perfect property solution.
                 </p>
               </div>
-              <button className="flex-shrink-0 px-[28px] py-[14px] bg-white text-primary font-semibold rounded-md shadow-soft hover:shadow-md hover:-translate-y-[2px] transition-all duration-150 focus:outline-none focus:ring-[3px] focus:ring-white/20">
+              <Link href="/contact-us" className="flex-shrink-0 px-[28px] py-[14px] bg-white text-primary font-semibold rounded-md shadow-soft hover:shadow-md hover:-translate-y-[2px] transition-all duration-150 focus:outline-none focus:ring-[3px] focus:ring-white/20 text-center inline-block">
                 Schedule A Visit
-              </button>
+              </Link>
             </div>
           </div>
         </div>

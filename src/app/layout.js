@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${syne.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${syne.variable} h-full antialiased overflow-x-hidden`}
     >
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground overflow-x-hidden">
         <Header />

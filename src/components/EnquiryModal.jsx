@@ -3,16 +3,9 @@
 import { useEffect } from "react";
 
 export default function EnquiryModal({ isOpen, onClose }) {
-  // Prevent scrolling when modal is open
+  // Removed overflow hidden to prevent layout shift
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
+    // We intentionally don't lock scroll here to prevent layout jump on desktop/mobile
   }, [isOpen]);
 
   if (!isOpen) return null;
