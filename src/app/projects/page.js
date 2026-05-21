@@ -85,7 +85,7 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div key={project.id} className="bg-surface-base rounded-xl overflow-hidden shadow-soft hover:shadow-md transition-all duration-200 hover:-translate-y-1 border border-border flex flex-col">
+            <Link key={project.id} href={`/projects/${project.id}`} className="block bg-surface-base rounded-xl overflow-hidden shadow-soft hover:shadow-md transition-all duration-200 hover:-translate-y-1 border border-border flex flex-col group cursor-pointer">
               {/* Image & Badge */}
               <div className="relative h-56 w-full">
                 <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }}></div>
@@ -124,7 +124,7 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-auto">
-                  <Link href={`/projects/${project.id}`} className={`block w-full py-[14px] text-center rounded-md font-semibold transition-all duration-150 ${project.status === 'Ongoing' ? 'bg-primary text-white hover:bg-[#5A2EE0] shadow-soft focus:ring-[3px] focus:ring-primary/20' : 'bg-surface-base border border-border text-dark hover:bg-surface-2'}`}>
+                  <div className={`block w-full py-[14px] text-center rounded-md font-semibold transition-all duration-150 ${project.status === 'Ongoing' ? 'bg-primary text-white group-hover:bg-[#5A2EE0] shadow-soft' : 'bg-surface-base border border-border text-dark group-hover:bg-surface-2'}`}>
                     {project.status === 'Ongoing' ? (
                       <span className="flex items-center justify-center gap-2">View Details &rarr;</span>
                     ) : (
@@ -133,10 +133,10 @@ export default function Projects() {
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                       </span>
                     )}
-                  </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

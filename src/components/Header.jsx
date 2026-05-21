@@ -87,36 +87,69 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Sidebar */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-surface-base">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-inner">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    isActive
-                      ? "bg-primary text-white"
-                      : "text-text-secondary hover:bg-surface-2 hover:text-primary"
-                  }`}
+        <div className="fixed inset-0 z-[100] md:hidden">
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity" 
+            onClick={() => setIsMobileMenuOpen(false)}
+          ></div>
+          
+          {/* Sidebar Panel */}
+          <div className="fixed inset-y-0 left-0 z-[100] w-4/5 max-w-sm bg-surface-base shadow-2xl overflow-y-auto transform transition-transform duration-300 animate-in slide-in-from-left">
+            <div className="flex items-center justify-between p-4 border-b border-border">
+              {/* Logo */}
+              <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
+                <div className="relative w-12 h-12">
+                  <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain" priority />
+                </div>
+              </Link>
+              
+              {/* Close Button */}
+              <button
+                type="button"
+                className="flex items-center justify-center w-8 h-8 rounded-full bg-[#D32F2F] text-white hover:bg-red-700 transition-colors focus:outline-none"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="px-4 py-6 space-y-2">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block px-4 py-3 rounded-md text-base font-medium transition-colors ${
+                      isActive
+                        ? "text-primary bg-surface-2"
+                        : "text-dark hover:bg-surface-2 hover:text-primary"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+              
+              <div className="pt-6 mt-6 border-t border-border">
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsModalOpen(true);
+                  }}
+                  className="w-full text-center block px-4 py-3 rounded-md text-base font-semibold text-white bg-primary hover:bg-[#5A2EE0] transition-colors shadow-soft"
                 >
-                  {link.name}
-                </Link>
-              );
-            })}
-            <button
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                setIsModalOpen(true);
-              }}
-              className="w-full text-left block px-3 py-2 rounded-md text-base font-semibold text-primary hover:bg-surface-2 mt-4 border border-primary"
-            >
-              Enquiry
-            </button>
+                  Quick Enquiry
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}

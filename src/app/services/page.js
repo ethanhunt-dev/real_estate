@@ -19,7 +19,7 @@ export default function Services() {
       <section className="pb-24 px-4 max-w-7xl mx-auto w-full">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Strategic Plotting */}
-          <div className="bg-surface-1 rounded-xl overflow-hidden shadow-soft hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-border group">
+          <Link href="/services/strategic-plotting" className="block bg-surface-1 rounded-xl overflow-hidden shadow-soft hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-border group cursor-pointer">
             <div className="h-64 relative bg-[url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80')] bg-cover bg-center">
               <div className="absolute bottom-4 left-4 w-10 h-10 bg-black/40 backdrop-blur-md rounded-lg flex items-center justify-center text-white">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
@@ -30,14 +30,14 @@ export default function Services() {
               <p className="text-text-secondary mb-8 leading-relaxed body-text">
                 Expertly curated residential plots in high-growth corridors, ensuring long-term appreciation and a perfect foundation for your dream home.
               </p>
-              <Link href="/services/strategic-plotting" className="text-primary font-semibold hover:text-[#5A2EE0] transition-colors inline-flex items-center text-sm">
+              <div className="text-primary font-semibold group-hover:text-[#5A2EE0] transition-colors inline-flex items-center text-sm">
                 Learn More <span className="ml-1 text-lg leading-none">&rarr;</span>
-              </Link>
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* Premium Construction */}
-          <div className="bg-surface-1 rounded-xl overflow-hidden shadow-soft hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-border group">
+          <Link href="/services" className="block bg-surface-1 rounded-xl overflow-hidden shadow-soft hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-border group cursor-pointer">
             <div className="h-64 relative bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80')] bg-cover bg-center">
               <div className="absolute bottom-4 left-4 w-10 h-10 bg-black/40 backdrop-blur-md rounded-lg flex items-center justify-center text-white">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
@@ -48,14 +48,14 @@ export default function Services() {
               <p className="text-text-secondary mb-8 leading-relaxed body-text">
                 Turning architectural visions into reality using superior materials, modern engineering techniques, and uncompromising quality standards.
               </p>
-              <Link href="/services" className="text-primary font-semibold hover:text-[#5A2EE0] transition-colors inline-flex items-center text-sm">
+              <div className="text-primary font-semibold group-hover:text-[#5A2EE0] transition-colors inline-flex items-center text-sm">
                 Learn More <span className="ml-1 text-lg leading-none">&rarr;</span>
-              </Link>
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* Organic Farmlands */}
-          <div className="bg-surface-1 rounded-xl overflow-hidden shadow-soft hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-border group">
+          <Link href="/services" className="block bg-surface-1 rounded-xl overflow-hidden shadow-soft hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-border group cursor-pointer">
             <div className="h-64 relative bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80')] bg-cover bg-center">
               <div className="absolute bottom-4 left-4 w-10 h-10 bg-black/40 backdrop-blur-md rounded-lg flex items-center justify-center text-white">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
@@ -66,11 +66,11 @@ export default function Services() {
               <p className="text-text-secondary mb-8 leading-relaxed body-text">
                 Sustainable living opportunities with professionally managed farmlands, offering high ROI and a tranquil escape from urban life.
               </p>
-              <Link href="/services" className="text-primary font-semibold hover:text-[#5A2EE0] transition-colors inline-flex items-center text-sm">
+              <div className="text-primary font-semibold group-hover:text-[#5A2EE0] transition-colors inline-flex items-center text-sm">
                 Learn More <span className="ml-1 text-lg leading-none">&rarr;</span>
-              </Link>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
