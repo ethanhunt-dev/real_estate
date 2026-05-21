@@ -27,7 +27,7 @@ export default function Projects() {
       price: "₹32L - 55L",
       location: "Devanahalli, Bangalore",
       features: ["Airport Vicinity", "Smart Plots"],
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80",
     },
     {
       id: 4,
@@ -85,7 +85,7 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Link key={project.id} href={`/projects/${project.id}`} className="block bg-surface-base rounded-xl overflow-hidden shadow-soft hover:shadow-md transition-all duration-200 hover:-translate-y-1 border border-border flex flex-col group cursor-pointer">
+            <Link key={project.id} href={`/projects/${project.id}`} className="flex flex-col bg-surface-base rounded-xl overflow-hidden shadow-soft hover:shadow-md transition-all duration-200 hover:-translate-y-1 border border-border group cursor-pointer">
               {/* Image & Badge */}
               <div className="relative h-56 w-full">
                 <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }}></div>

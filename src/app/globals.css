@@ -35,6 +35,7 @@
 
 @layer base {
   :root {
+    color-scheme: light;
     /* Brand */
     --color-primary: #6C3BFF;
     --color-dark: #0A0A0A;
