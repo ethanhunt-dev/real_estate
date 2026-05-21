@@ -3,18 +3,18 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#374151] text-gray-300">
+    <footer className="bg-dark text-text-secondary border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="space-y-4">
             <div className="flex items-center gap-4 mb-2">
-              <div className="relative w-16 h-16 bg-white rounded-full shadow-lg border-2 border-brand-gold overflow-hidden flex-shrink-0">
-                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-cover scale-150 origin-center" />
+              <div className="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
+                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain" />
               </div>
               <h3 className="font-serif text-2xl font-bold text-white">Vishwa Priya Developers</h3>
             </div>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-text-tertiary">
               Creating value through premium land development and architectural excellence. Your trusted partner in building a secure future since 1995.
             </p>
             <div className="flex space-x-4 pt-2">
@@ -25,7 +25,7 @@ export default function Footer() {
                   <path fillRule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" clipRule="evenodd" />
                 </svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-text-tertiary hover:text-primary transition-colors">
                 <span className="sr-only">Community</span>
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" clipRule="evenodd" />
@@ -38,11 +38,11 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href="/" className="text-sm text-gray-400 hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/about-us" className="text-sm text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/projects" className="text-sm text-gray-400 hover:text-white transition-colors">Projects</Link></li>
-              <li><Link href="/services" className="text-sm text-gray-400 hover:text-white transition-colors">Services</Link></li>
-              <li><Link href="/contact-us" className="text-sm text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/" className="text-sm text-text-tertiary hover:text-primary transition-colors">Home</Link></li>
+              <li><Link href="/about-us" className="text-sm text-text-tertiary hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/projects" className="text-sm text-text-tertiary hover:text-primary transition-colors">Projects</Link></li>
+              <li><Link href="/services" className="text-sm text-text-tertiary hover:text-primary transition-colors">Services</Link></li>
+              <li><Link href="/contact-us" className="text-sm text-text-tertiary hover:text-primary transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -75,16 +75,16 @@ export default function Footer() {
           {/* Newsletter */}
           <div>
             <h4 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Newsletter Sign-up</h4>
-            <p className="text-sm text-gray-400 mb-4">Get early access to new project launches.</p>
+            <p className="text-sm text-text-tertiary mb-4">Get early access to new project launches.</p>
             <form className="flex">
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full min-w-0 px-4 py-2 text-base text-gray-900 bg-white border border-transparent rounded-l-md focus:outline-none focus:ring-2 focus:ring-brand-navy focus:border-transparent sm:text-sm"
+                className="w-full min-w-0 px-4 py-2 text-base text-dark bg-surface-base border border-border rounded-l-md focus:outline-none focus:ring-[3px] focus:ring-primary/20 sm:text-sm"
               />
               <button
                 type="submit"
-                className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-r-md text-white bg-[#3052A3] hover:bg-brand-navy transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-navy"
+                className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-r-md text-white bg-primary hover:bg-[#5A2EE0] transition-colors focus:outline-none focus:ring-[3px] focus:ring-offset-2 focus:ring-primary/20"
               >
                 Join
               </button>
@@ -92,13 +92,13 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-600 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-400">
-            &copy; 2024 Vishwa Priya Developers. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-[#1a1a1a] flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm text-text-tertiary">
+            &copy; 2026 Vishwa Priya Developers. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="#" className="text-sm text-text-tertiary hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="#" className="text-sm text-text-tertiary hover:text-primary transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

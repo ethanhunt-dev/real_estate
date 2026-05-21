@@ -9,6 +9,7 @@ import EnquiryModal from "./EnquiryModal";
 export default function Header() {
   const pathname = usePathname();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -20,16 +21,16 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-surface-base border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-16 h-16 md:w-20 md:h-20 bg-white rounded-full shadow-md group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105 border-2 border-brand-gold overflow-hidden">
-                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-cover scale-150 origin-center" priority />
+              <div className="relative w-12 h-12 md:w-16 md:h-16 group-hover:scale-105 transition-all duration-300 transform">
+                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain" priority />
               </div>
-              <span className="font-serif text-2xl font-bold text-brand-navy hidden lg:block">
+              <span className="font-serif text-2xl font-bold text-dark hidden lg:block">
                 Vishwa Priya Developers
               </span>
             </Link>
@@ -45,8 +46,8 @@ export default function Header() {
                   href={link.href}
                   className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? "border-brand-navy text-brand-navy"
-                      : "border-transparent text-gray-500 hover:text-brand-navy hover:border-gray-300"
+                      ? "border-primary text-primary"
+                      : "border-transparent text-text-secondary hover:text-primary hover:border-border"
                   }`}
                 >
                   {link.name}
@@ -59,22 +60,66 @@ export default function Header() {
           <div className="hidden md:flex items-center">
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="bg-brand-navy text-white px-6 py-2 rounded-md font-medium hover:bg-brand-navy/90 transition-colors"
+              className="bg-primary text-white px-7 py-3 rounded-md font-semibold hover:bg-[#5A2EE0] hover:-translate-y-[2px] hover:shadow-md transition-all duration-150 focus:outline-none focus:ring-[3px] focus:ring-primary/20"
             >
               Enquiry
             </button>
           </div>
 
-          {/* Mobile menu button (placeholder) */}
+          {/* Mobile menu button */}
           <div className="flex items-center md:hidden">
-            <button className="text-gray-500 hover:text-brand-navy p-2">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-text-secondary hover:text-primary p-2 focus:outline-none"
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-t border-border bg-surface-base">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-inner">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive
+                      ? "bg-primary text-white"
+                      : "text-text-secondary hover:bg-surface-2 hover:text-primary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setIsModalOpen(true);
+              }}
+              className="w-full text-left block px-3 py-2 rounded-md text-base font-semibold text-primary hover:bg-surface-2 mt-4 border border-primary"
+            >
+              Enquiry
+            </button>
+          </div>
+        </div>
+      )}
 
       <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </header>

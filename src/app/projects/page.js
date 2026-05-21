@@ -59,25 +59,25 @@ export default function Projects() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 pb-24">
+    <div className="flex flex-col min-h-screen bg-surface-base pb-24">
       {/* Header Section */}
       <section className="pt-16 pb-12 px-4 max-w-7xl mx-auto w-full">
-        <h1 className="font-serif text-4xl md:text-5xl font-bold text-brand-navy mb-4">
+        <h1 className="font-serif text-4xl md:text-5xl font-bold text-dark mb-4">
           Premium Plot Projects
         </h1>
-        <p className="text-lg text-gray-600 max-w-3xl mb-10">
+        <p className="body-lg text-text-secondary max-w-3xl mb-10">
           Discover your future at Vishwa Priya Developers. We offer premium residential plots designed with precision, security, and world-class amenities in prime locations.
         </p>
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap gap-4 mb-12">
-          <button className="px-6 py-2 bg-brand-navy text-white font-medium rounded-full hover:bg-blue-900 transition-colors">
+          <button className="px-[28px] py-[10px] bg-primary text-white font-semibold rounded-md shadow-soft transition-all duration-150 hover:bg-[#5A2EE0] hover:-translate-y-[2px]">
             All Projects
           </button>
-          <button className="px-6 py-2 bg-white text-gray-700 border border-gray-300 font-medium rounded-full hover:border-brand-navy hover:text-brand-navy transition-colors">
+          <button className="px-[28px] py-[10px] bg-surface-base text-text-secondary border border-border font-semibold rounded-md transition-all duration-150 hover:border-primary hover:text-primary">
             Ongoing
           </button>
-          <button className="px-6 py-2 bg-white text-gray-700 border border-gray-300 font-medium rounded-full hover:border-brand-navy hover:text-brand-navy transition-colors">
+          <button className="px-[28px] py-[10px] bg-surface-base text-text-secondary border border-border font-semibold rounded-md transition-all duration-150 hover:border-primary hover:text-primary">
             Completed
           </button>
         </div>
@@ -85,7 +85,7 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div key={project.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col">
+            <div key={project.id} className="bg-surface-base rounded-xl overflow-hidden shadow-soft hover:shadow-md transition-all duration-200 hover:-translate-y-1 border border-border flex flex-col">
               {/* Image & Badge */}
               <div className="relative h-56 w-full">
                 <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }}></div>
@@ -104,27 +104,27 @@ export default function Projects() {
               {/* Content */}
               <div className="p-6 flex-grow flex flex-col">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-serif text-xl font-bold text-gray-900">{project.title}</h3>
-                  <span className={`font-semibold text-sm ${project.price === 'Sold Out' ? 'text-red-500' : 'text-gray-600'}`}>
+                  <h3 className="font-serif text-xl font-bold text-dark">{project.title}</h3>
+                  <span className={`font-semibold text-sm ${project.price === 'Sold Out' ? 'text-error' : 'text-text-secondary'}`}>
                     {project.price}
                   </span>
                 </div>
                 
-                <div className="flex items-center text-gray-500 text-sm mb-4">
+                <div className="flex items-center text-text-tertiary text-sm mb-4">
                   <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                   {project.location}
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.features.map((feature, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">
+                    <span key={idx} className="px-3 py-1 bg-surface-2 text-text-secondary text-xs font-semibold rounded-full">
                       {feature}
                     </span>
                   ))}
                 </div>
 
                 <div className="mt-auto">
-                  <Link href={`/projects/${project.id}`} className={`block w-full py-3 text-center rounded-lg font-medium transition-colors ${project.status === 'Ongoing' ? 'bg-gray-400 text-white hover:bg-gray-500' : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'}`}>
+                  <Link href={`/projects/${project.id}`} className={`block w-full py-[14px] text-center rounded-md font-semibold transition-all duration-150 ${project.status === 'Ongoing' ? 'bg-primary text-white hover:bg-[#5A2EE0] shadow-soft focus:ring-[3px] focus:ring-primary/20' : 'bg-surface-base border border-border text-dark hover:bg-surface-2'}`}>
                     {project.status === 'Ongoing' ? (
                       <span className="flex items-center justify-center gap-2">View Details &rarr;</span>
                     ) : (
