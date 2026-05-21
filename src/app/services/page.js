@@ -56,7 +56,7 @@ export default function Services() {
 
           {/* Organic Farmlands */}
           <div className="bg-surface-1 rounded-xl overflow-hidden shadow-soft hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-border group">
-            <div className="h-64 relative bg-[url('https://images.unsplash.com/photo-1592982537447-6f23b2024db2?auto=format&fit=crop&q=80')] bg-cover bg-center">
+            <div className="h-64 relative bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80')] bg-cover bg-center">
               <div className="absolute bottom-4 left-4 w-10 h-10 bg-black/40 backdrop-blur-md rounded-lg flex items-center justify-center text-white">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
               </div>

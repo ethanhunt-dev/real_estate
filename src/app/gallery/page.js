@@ -5,7 +5,7 @@ export default function Gallery() {
     {
       id: 1,
       category: "Site Development",
-      src: "https://images.unsplash.com/photo-1541888081622-19e5309f3e8f?auto=format&fit=crop&q=80",
+      src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
       alt: "Construction site with crane"
     },
     {
