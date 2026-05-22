@@ -70,14 +70,20 @@ export default function Projects() {
         </p>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-4 mb-12">
-          <button className="px-[28px] py-[10px] bg-primary text-white font-semibold rounded-md shadow-soft transition-all duration-150 hover:bg-[#5A2EE0] hover:-translate-y-[2px]">
+        <div 
+          className="flex flex-nowrap overflow-x-auto gap-4 mb-12 pb-2 hide-scroll" 
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          <style dangerouslySetInnerHTML={{__html: `
+            .hide-scroll::-webkit-scrollbar { display: none; }
+          `}} />
+          <button className="whitespace-nowrap shrink-0 px-[28px] py-[10px] bg-primary text-white font-semibold rounded-md shadow-soft transition-all duration-150 hover:bg-[#5A2EE0] hover:-translate-y-[2px]">
             All Projects
           </button>
-          <button className="px-[28px] py-[10px] bg-surface-base text-text-secondary border border-border font-semibold rounded-md transition-all duration-150 hover:border-primary hover:text-primary">
+          <button className="whitespace-nowrap shrink-0 px-[28px] py-[10px] bg-surface-base text-text-secondary border border-border font-semibold rounded-md transition-all duration-150 hover:border-primary hover:text-primary">
             Ongoing
           </button>
-          <button className="px-[28px] py-[10px] bg-surface-base text-text-secondary border border-border font-semibold rounded-md transition-all duration-150 hover:border-primary hover:text-primary">
+          <button className="whitespace-nowrap shrink-0 px-[28px] py-[10px] bg-surface-base text-text-secondary border border-border font-semibold rounded-md transition-all duration-150 hover:border-primary hover:text-primary">
             Completed
           </button>
         </div>
