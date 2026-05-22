@@ -125,6 +125,18 @@ export default function Header() {
                 </Link>
               );
             })}
+            
+            <div className="px-6 py-4">
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsModalOpen(true);
+                }}
+                className="w-full text-center block px-4 py-2.5 rounded-md text-sm font-semibold text-[#CC2027] border border-[#CC2027]/40 hover:bg-[#CC2027]/5 transition-colors"
+              >
+                Enquiry
+              </button>
+            </div>
           </div>
           
           <div className="px-6 py-8 mt-2 bg-white">
