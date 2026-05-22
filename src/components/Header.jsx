@@ -41,11 +41,10 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors ${
-                    isActive
-                      ? "border-primary text-primary"
-                      : "border-transparent text-text-secondary hover:text-primary hover:border-border"
-                  }`}
+                  className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors ${isActive
+                    ? "border-primary text-primary"
+                    : "border-transparent text-text-secondary hover:text-primary hover:border-border"
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -55,7 +54,7 @@ export default function Header() {
 
           {/* Enquiry Button */}
           <div className="hidden md:flex items-center">
-            <button 
+            <button
               onClick={() => setIsModalOpen(true)}
               className="bg-primary text-white px-7 py-3 rounded-md font-semibold hover:bg-[#5A2EE0] hover:-translate-y-[2px] hover:shadow-md transition-all duration-150 focus:outline-none focus:ring-[3px] focus:ring-primary/20"
             >
@@ -65,7 +64,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <div className="flex items-center md:hidden">
-            <button 
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-text-secondary hover:text-primary p-2 focus:outline-none"
               aria-label="Toggle mobile menu"
@@ -87,11 +86,11 @@ export default function Header() {
       {/* Mobile Navigation Sidebar */}
       <div className={`fixed inset-0 z-[100] md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'visible' : 'invisible pointer-events-none'}`}>
         {/* Backdrop */}
-        <div 
-          className={`fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}`} 
+        <div
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={() => setIsMobileMenuOpen(false)}
         ></div>
-        
+
         {/* Sidebar Panel */}
         <div className={`fixed inset-y-0 left-0 z-[100] w-4/5 max-w-sm bg-surface-base shadow-2xl overflow-y-auto transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="flex items-center justify-between p-4 border-b border-border">
@@ -101,7 +100,7 @@ export default function Header() {
                 <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain object-left" priority />
               </div>
             </Link>
-            
+
             {/* Close Button */}
             <button
               type="button"
@@ -114,7 +113,7 @@ export default function Header() {
               </svg>
             </button>
           </div>
-          
+
           <div className="px-4 py-6 space-y-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -123,17 +122,16 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-md text-base font-medium transition-colors ${
-                    isActive
-                      ? "text-primary bg-surface-2"
-                      : "text-dark hover:bg-surface-2 hover:text-primary"
-                  }`}
+                  className={`block px-4 py-3 rounded-md text-base font-medium transition-colors ${isActive
+                    ? "text-primary bg-surface-2"
+                    : "text-dark hover:bg-surface-2 hover:text-primary"
+                    }`}
                 >
                   {link.name}
                 </Link>
               );
             })}
-            
+
             <div className="pt-6 mt-6 border-t border-border">
               <button
                 onClick={() => {
