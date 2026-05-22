@@ -23,16 +23,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-surface-base border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24 md:h-28">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-16 h-16 md:w-20 md:h-20 group-hover:scale-105 transition-all duration-300 transform">
-                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain" priority />
+            <Link href="/" className="flex items-center group">
+              <div className="relative w-48 h-20 md:w-64 md:h-24 group-hover:scale-105 transition-all duration-300 transform">
+                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain object-left" priority />
               </div>
-              <span className="font-serif text-2xl font-bold text-dark hidden lg:block">
-                Vishwa Priya Developers
-              </span>
             </Link>
           </div>
 
@@ -99,9 +96,9 @@ export default function Header() {
         <div className={`fixed inset-y-0 left-0 z-[100] w-4/5 max-w-sm bg-surface-base shadow-2xl overflow-y-auto transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="flex items-center justify-between p-4 border-b border-border">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
-              <div className="relative w-16 h-16">
-                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain" priority />
+            <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
+              <div className="relative w-40 h-20">
+                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain object-left" priority />
               </div>
             </Link>
             
