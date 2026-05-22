@@ -27,7 +27,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 md:w-16 md:h-16 group-hover:scale-105 transition-all duration-300 transform">
+              <div className="relative w-16 h-16 md:w-20 md:h-20 group-hover:scale-105 transition-all duration-300 transform">
                 <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain" priority />
               </div>
               <span className="font-serif text-2xl font-bold text-dark hidden lg:block">
@@ -100,7 +100,7 @@ export default function Header() {
           <div className="flex items-center justify-between p-4 border-b border-border">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
-              <div className="relative w-12 h-12">
+              <div className="relative w-16 h-16">
                 <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain" priority />
               </div>
             </Link>
