@@ -8,11 +8,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center mb-6 group inline-flex">
-              <div className="relative w-48 h-20 md:w-64 md:h-24 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
-                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain object-left" />
+            <div className="flex items-center gap-4 mb-4">
+              <div className="relative w-40 h-40 md:w-56 md:h-56 flex-shrink-0">
+                <Image src="/logo.svg" alt="Vishwa Priya Developers Logo" fill className="object-contain" />
               </div>
-            </Link>
+            </div>
             <p className="text-sm text-text-tertiary">
               Creating value through premium land development and architectural excellence. Your trusted partner in building a secure future since 1995.
             </p>
@@ -90,7 +90,7 @@ export default function Footer() {
             </form>
           </div>
         </div>
-        
+
         <div className="mt-12 pt-8 border-t border-[#1a1a1a] flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-text-tertiary">
             &copy; 2026 Vishwa Priya Developers. All rights reserved.
